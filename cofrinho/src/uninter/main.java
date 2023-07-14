@@ -1,5 +1,5 @@
 package uninter;
 
-public class main {
+public class Main {
 
 }
