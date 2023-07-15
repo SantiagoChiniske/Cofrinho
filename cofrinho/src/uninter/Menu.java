@@ -92,9 +92,7 @@ public class Menu {
 		
 		//Aqui começa a estrutura de decisão de qual o usuário selecionou
 		if(opcaoMoeda == 1) {
-			moeda = new Real(valorMoeda);
-			cofrinho.adicionar(moeda);
-			
+			moeda = new Real(valorMoeda);	
 		}
 		else if(opcaoMoeda == 2) {
 			moeda = new Dolar(valorMoeda);
@@ -125,8 +123,7 @@ public class Menu {
 		System.out.println("Digite o valor:");
 		String valorTextualMoeda  = sc.next();
 		
-		valorTextualMoeda = valorTextualMoeda.replace(",",".");//aqui estamos mudando de vircula para ponto
-		
+		valorTextualMoeda = valorTextualMoeda.replace(",",".");//aqui estamos mudando de vircula para ponto	
 		double valorMoeda = Double.valueOf(valorTextualMoeda); 
 		
 		Moeda moeda = null;//O valor da moeda começa como nulo
@@ -146,10 +143,16 @@ public class Menu {
 			exibirMenuPrincipal();
 		}
 		
-		cofrinho.remover(moeda);
+		//Verificando se tem a moeda e se ela foi removido
 		
-		//Print confirmando que funcionou 
-		System.out.println("Sua moeda foi adicionada!");
+		if(cofrinho.remover(moeda)) {
+			System.out.println("Moeda Removida com Sucesso!");
+		}else {
+			System.out.println("Não foi encontado a moeda com esse valor!");
+		}
+		
+		
+		
 		
 	}
 

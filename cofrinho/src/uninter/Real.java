@@ -20,6 +20,21 @@ public class Real extends Moeda {
 		
 	}
 	
-	
+	public boolean equals(Object objeto) {
+		//Validando a clase
+		if(this.getClass()!= objeto.getClass()) {
+			return false;
+		}
+		
+		//Conversão entre variaveis do Objeto para classe Real
+		Real objetoDeReal = (Real) objeto;
+		
+		
+		//Validando o valor
+		if(this.valor != objetoDeReal.valor) {
+			return false;
+		}
+		return true;
+	}
 
 }

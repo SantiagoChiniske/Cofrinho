@@ -21,8 +21,8 @@ public class Cofrinho {
 	
 	//Remover as moedas
 	
-	public void remover(Moeda moeda) {
-		this.listaMoedas.remove(moeda);
+	public boolean remover(Moeda moeda) {
+		return this.listaMoedas.remove(moeda);
 	}
 	
 	

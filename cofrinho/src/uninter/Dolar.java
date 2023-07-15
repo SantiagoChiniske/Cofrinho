@@ -18,4 +18,20 @@ public class Dolar extends Moeda {
 		return this.valor * 4.79;
 	}
 
+	public boolean equals(Object objeto) {
+		//Validando a clase
+		if(this.getClass()!= objeto.getClass()) {
+			return false;
+		}
+		
+		//Conversão entre variaveis do Objeto para classe Real
+		Dolar objetoDeDolar = (Dolar) objeto;
+		
+		
+		//Validando o valor
+		if(this.valor != objetoDeDolar.valor) {
+			return false;
+		}
+		return true;
+	}
 }

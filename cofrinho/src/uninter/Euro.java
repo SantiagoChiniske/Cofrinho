@@ -18,4 +18,20 @@ public class Euro extends Moeda {
 		return this.valor * 5.39;
 	}
 
+	public boolean equals(Object objeto) {
+		//Validando a clase
+		if(this.getClass()!= objeto.getClass()) {
+			return false;
+		}
+		
+		//Conversão entre variaveis do Objeto para classe Real
+		Euro objetoDeEuro = (Euro) objeto;
+		
+		
+		//Validando o valor
+		if(this.valor != objetoDeEuro.valor) {
+			return false;
+		}
+		return true;
+	}
 }
