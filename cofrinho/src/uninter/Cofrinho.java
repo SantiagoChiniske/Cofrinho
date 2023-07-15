@@ -19,6 +19,12 @@ public class Cofrinho {
 		this.listaMoedas.add(moeda);
 	}
 	
+	//Remover as moedas
+	
+	public void remover(Moeda moeda) {
+		this.listaMoedas.remove(moeda);
+	}
+	
 	
 	//Lista as moedas
 	

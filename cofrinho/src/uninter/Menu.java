@@ -41,6 +41,11 @@ public class Menu {
 			exibirMenuPrincipal();
 			break;
 			
+		case"2":
+			exibirSubMenuRemoverMoedas();
+			exibirMenuPrincipal();
+			break;
+			
 		//Lista as moedas
 		case "3":
 			cofrinho.listagemMoedas();
@@ -93,23 +98,59 @@ public class Menu {
 		}
 		else if(opcaoMoeda == 2) {
 			moeda = new Dolar(valorMoeda);
-			cofrinho.adicionar(moeda);
-			
 		}
 		else if(opcaoMoeda == 3) {
-			moeda = new Euro(valorMoeda);
-			cofrinho.adicionar(moeda);
-			
+			moeda = new Euro(valorMoeda);		
 			
 		}else {
 			System.out.println("Não existe essa moeda");
 			exibirMenuPrincipal();
 		}
 		
+		cofrinho.adicionar(moeda);
+		
 		//Print confirmando que funcionou 
 		System.out.println("Sua moeda foi adicionada!");
 		
 	}
 	
+	private void exibirSubMenuRemoverMoedas(){
+		System.out.println("Escolha uma moeda:");
+		System.out.println("1 - Real");
+		System.out.println("2 - Dólar");
+		System.out.println("3 - Euro");
+		
+		int opcaoMoeda = sc.nextInt();//Aqui vai ser guardado opção do usuário
+		
+		System.out.println("Digite o valor:");
+		String valorTextualMoeda  = sc.next();
+		
+		valorTextualMoeda = valorTextualMoeda.replace(",",".");//aqui estamos mudando de vircula para ponto
+		
+		double valorMoeda = Double.valueOf(valorTextualMoeda); 
+		
+		Moeda moeda = null;//O valor da moeda começa como nulo
+		
+		
+		//Aqui começa a estrutura de decisão de qual o usuário selecionou
+		if(opcaoMoeda == 1) {
+			moeda = new Real(valorMoeda);;		
+		}
+		else if(opcaoMoeda == 2) {
+			moeda = new Dolar(valorMoeda);
+		}
+		else if(opcaoMoeda == 3) {
+			moeda = new Euro(valorMoeda);	
+		}else {
+			System.out.println("Não existe essa moeda");
+			exibirMenuPrincipal();
+		}
+		
+		cofrinho.remover(moeda);
+		
+		//Print confirmando que funcionou 
+		System.out.println("Sua moeda foi adicionada!");
+		
+	}
 
 }
