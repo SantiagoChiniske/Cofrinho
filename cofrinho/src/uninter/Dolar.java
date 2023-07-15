@@ -1,5 +1,6 @@
 package uninter;
 
+//Clase filha da Moeda
 public class Dolar extends Moeda {
 
 	//Valor inicial da moeda com o metódo contrutor
@@ -7,12 +8,12 @@ public class Dolar extends Moeda {
 			this.valor = valor;
 	}
 	
-	@Override
+	//Metódo Info do Real
 	public void info() {
 		System.out.println("Dolar - " + valor);		
 	}
 
-	@Override
+	//Valor convertido para real
 	public double converter() {
 		return this.valor * 4.79;
 	}
